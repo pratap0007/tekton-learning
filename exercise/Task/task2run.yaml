@@ -1,0 +1,7 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: multiple-echo-run
+spec:
+  taskRef:
+    name: multiple-echo

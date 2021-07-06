@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: clutsertaskrun
+spec:
+  taskRef:
+    kind: ClusterTask
+    name: hello-clustertask
+status:
+  podName: ''
