@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: again
+spec:
+  steps:
+    - name: again
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        sleep 40
+        echo "Goodbye World!"

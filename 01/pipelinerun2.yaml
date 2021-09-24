@@ -1,0 +1,8 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: hello-goodbye-new-run
+spec:
+  pipelineRef:
+    name: hello-goodbye
+  status: PipelineRunCancelled
