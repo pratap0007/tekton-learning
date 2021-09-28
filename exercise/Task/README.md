@@ -1,14 +1,66 @@
-### Task
+## Task
+---
 
-- Task is a collection of steps and step is a refrence of container.
-- Step is a small operation in CI/CD flow e.g. run unit test
-- Each step will have an image
-- Basic unit in kubernete is Pod and Task creates pod
-- Task help in grouping same logical steps and ordering of execution of steps as well
--
+### What is Task
 
-### Taskrun
+---
 
-- It initiate the execution of Task with specific input and output on the cluster
-- Taskrun execute all steps of Task in same order asdefine in the Task
-- It execute all steps untill successful or failure occures
+Task is a collection of steps and steps are the reference of containers and run as a kubernetes pod on the cluster.
+Each step runs in a separate container but within a single pod and shares pod resources and network among them.
+
+### What is Step
+
+---
+
+Step is a smallest unit operation of CI/CD workflow e.g. build image,build binary,push the image to the registry.
+Each step contains an image so it run in a separate container
+
+### Why we need it
+
+---
+
+It is required to perform unit task e.g unit test in the CI/CD workflow which might have one or many steps
+
+### Sample task
+
+```
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: first-task
+spec:
+  steps:
+    - name: echo
+      image: ubuntu
+      command:
+        - echo
+      args:
+        - 'Hello World'
+
+```
+
+## Taskrun
+
+---
+
+### What is TaskRun
+
+---
+
+Taskrun intiates the execution of the task and requires specific input and produces specific output.
+These input and output are required by the Task defines in the Taskrun.
+Task's input and output are customized.
+
+It execute all steps of the task untill successful or failure occures.
+
+### Taskrun sample
+```
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: first-task-run
+spec:
+  taskRef:
+    name: first-task
+
+```
