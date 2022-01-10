@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: Role
+metadata:
+  namespace: test-1
+  name: testadmin
+rules:
+  - apiGroups: ['*']
+    resources: ['*']
+    verbs: ['*']

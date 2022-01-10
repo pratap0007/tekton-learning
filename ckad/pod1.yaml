@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sec-pod
+  labels:
+    app: secpodapp
+spec:
+  securityContext:
+    runAsUser: 1000
+  containers:
+    - name: abc-container
+      image: nginx

@@ -1,0 +1,5 @@
+apiVersion: tekton.dev/v1beta1
+kind: ServiceAccount
+metadata:
+  name: myaccount
+  namespace: test-1

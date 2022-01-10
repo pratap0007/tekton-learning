@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: abcpod
+  labels:
+    app: abcpod
+spec:
+  containers:
+    - name: abc-container
+      image: nginx

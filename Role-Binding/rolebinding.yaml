@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: RoleBinding
+metadata:
+  name: testadminbinding
+  namespace: test
+subjects:
+  - kind: ServiceAccount
+    name: myaccount
+    apiGroup: ''
+roleRef:
+  kind: Role
+  name: testadmin
+  apiGroup: ''
