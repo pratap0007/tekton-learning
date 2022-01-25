@@ -1,5 +1,5 @@
 apiVersion: tekton.dev/v1beta1
-kind: Task
+kind: ClusterTask
 metadata:
   name: black
   labels:
@@ -14,11 +14,12 @@ spec:
   description: >-
     This task can be used to format Python code
   workspaces:
-    - name: shared-workspace
+    - name: shared-workspace-1
       optional: true
       description: >-
         The workspace containing python source code which we want to format.
     - name: shared-workspace-2
+      optional: true
       description: >-
         The workspace containing python source code which we want to format.
   params:
