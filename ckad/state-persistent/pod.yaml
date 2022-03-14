@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ui-pv-pod
+spec:
+  volumes:
+    - name: ui-pv-storage
+      persistentVolumeClaim:
+        claimName: ui-pv-claim
+  containers:
+    - name: pv-container
+      image: nginx
+      volumeMounts:
+        - mountPath: '/usr/share/nginx/html'
+          name: ui-pv-storage

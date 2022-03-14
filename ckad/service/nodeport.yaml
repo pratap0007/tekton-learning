@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-service
+spec:
+  type: NodePort
+  ports:
+    # target port (pod port)
+    - targetPort: 80
+      # service port mapping to service port
+      port: 80
+      nodePort: 30008
+  selector:
+    app: ui-app
+    function: cra

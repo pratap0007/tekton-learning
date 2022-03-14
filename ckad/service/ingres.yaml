@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-loadbalancer
+spec:
+  rules:
+    - host: resourcestore.com
+    - http:
+        paths:
+          - path: /ui
+            backend:
+              serviceName: ui-app
+              servicePort: 80
