@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: git-clone-run
+spec:
+  workspaces:
+    - name: output
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+  params:
+    - name: url
+      value: https://github.com/kelseyhightower/nocode
+  taskRef:
+    name: git-clone
+    bundle: gcr.io/tekton-releases/catalog/upstream/git-clone@sha256:fbdf93156008fc8166d7045858efd5697c2289a637f2800d338be87bc773445f
