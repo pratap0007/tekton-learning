@@ -1,0 +1,3 @@
+# External admission controllers are (1. Mutating admission webhooks 2. Validating admission webhooks)
+#
+kind: ValidatingWebhhokConfiguration/ MutatingWebhookConfigurationw

@@ -1,13 +1,8 @@
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
-  creationTimestamp: null
-  generateName: goodbye-run-
-  namespace: default
+  name: taskrun-abc
 spec:
-  resources: {}
-  serviceAccountName: ''
   taskRef:
-    name: goodbye
-status:
-  podName: ''
+    name: abcd-goodbye
+    bundle: docker.io/pratap7/taskcollections:v1.0/images/sha256-d02119d5ea42163a5c12e0272c4e774f0304cf6d82ac843e7e9740d03a664ccd
