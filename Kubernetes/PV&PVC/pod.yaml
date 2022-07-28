@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod-abc
+spec:
+  containers:
+    - name: busybox-cotainer
+      image: k8s.gcr.io/busybox
+      volumeMounts:
+        - name: my-pvc-storage
+          mountPath: /tmp/abc
+  volumes:
+    - name: my-pvc-storage
+      persistentVolumeClaim:
+        claimName: my-pvc
