@@ -1,0 +1,9 @@
+apiVersion: abc.com/v1alpha1
+kind: MyClinic
+metadata:
+  name: patient-data
+spec:
+  patentName: abcd
+  address: up pratapgarh
+  disease: fever
+  replicas: 1
