@@ -1,9 +1,9 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: hello-goodbye-second
+  name: again-pipelinerun
 spec:
   tasks:
-    - name: hello
+    - name: again
       taskRef:
-        name: hello
+        name: again

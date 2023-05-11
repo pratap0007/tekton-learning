@@ -1,11 +1,7 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   name: hello-goodbye-new-run
 spec:
   pipelineRef:
     name: hello-goodbye
-  steps:
-    script: |
-      #!/bin/bash
-      sleep 10000

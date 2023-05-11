@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: again
@@ -10,3 +10,7 @@ spec:
         #!/bin/bash
         sleep 40
         echo "Goodbye World!"
+  params:
+    - name: url
+      description: name of the url
+      type: string
