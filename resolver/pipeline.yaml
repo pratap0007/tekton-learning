@@ -1,0 +1,38 @@
+# apiVersion: tekton.dev/v1
+# kind: Pipeline
+# metadata:
+#   name: pipeline-123
+# spec:
+#   # finally:
+#   #   - name: age
+#   #     taskRef:
+#   #       name: again
+#   tasks:
+#     - name: pt-1
+#       taskRef:
+#         name: task1
+#     # - name: pt-2
+#     #   taskRef:
+#     #     name: task2
+#     # - name: pt-3
+#     #   taskRef:
+#     #    name: task3
+
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: new-pipeline
+spec:
+  tasks:
+  - name: task1
+    taskRef:
+      resolver: cluster
+      kind: Task
+      params:
+      - name: kind
+        value: task 
+      - name: name
+        value: task1
+      - name: namespace
+        value: default
+      

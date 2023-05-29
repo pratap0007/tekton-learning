@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: pipeline-123
+spec:
+  # finally:
+  #   - name: age
+  #     taskRef:
+  #       name: again
+  tasks:
+    - name: pt-1
+      taskRef:
+        name: task1

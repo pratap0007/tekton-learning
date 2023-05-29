@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: remote-pipeline-reference
+spec:
+  pipelineRef:
+    resolver: git
+    params:
+    - name: repo 
+      value: https://github.com/pratap0007/tekton-learning
+    - name: pathInRepo
+      value: resolver/gitpipeline.yaml
+    - name: revision
+      value: main
