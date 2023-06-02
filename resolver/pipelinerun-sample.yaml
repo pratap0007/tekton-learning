@@ -8,7 +8,7 @@ spec:
     resolver: git
     params:
     - name: url
-      value: https://github.com/pratap0007/tekton-learning
+      value: https://github.com/pratap0007/tekton-learning.git
     - name: revision
       value: main
     - name: pathInRepo
