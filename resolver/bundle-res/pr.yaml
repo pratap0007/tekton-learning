@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: bundle-res-pr
+spec:
+  pipelineRef:
+    resolver: bundles
+    params:
+    - name: bundle
+      value: 10.96.190.208:5000/simple/pipeline:latest
+    - name: name
+      value: hello-pipeline
+    - name: kind
+      value: pipeline
+  params:
+  - name: username
+    value: "tekton pipelines"

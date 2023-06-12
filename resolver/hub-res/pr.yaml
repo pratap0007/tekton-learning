@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: hub-demo-res
+spec:
+  pipelineRef:
+    resolver: hub
+    params:
+    - name: catalog # optional
+      value: tekton-catalog-pipelines 
+    - name: type # optional
+      value: artifact
+    - name: kind
+      value: pipeline
+    - name: name
+      value: buildpacks
+    - name: version
+      value: "0.1"
+  # Note: the buildpacks pipeline requires parameters.
+  # Resolution of the pipeline will succeed but the PipelineRun
+  # overall will not succeed without those parameters.

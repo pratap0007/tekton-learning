@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: pipeline-123
+spec:
+  tasks:
+    - name: pt-1
+      taskSpec:
+        steps:
+          - name: hello 
+            image: ubuntu
+            script: |
+              echo "Hello task"
+        

@@ -1,17 +1,14 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: git-clone-demo-pr
+  name: git-clone-git-res
 spec:
   pipelineRef:
     resolver: git
     params:
     - name: url
-      value: https://github.com/tektoncd/catalog.git
+      value: https://github.com/pratap0007/tekton-learning.git
     - name: revision
       value: main
     - name: pathInRepo
-      value: pipeline/buildpacks/0.1/buildpacks.yaml
-  params:
-  - name: name
-    value: Ranni
+      value: resolver/git-res/pipeline-123.yaml

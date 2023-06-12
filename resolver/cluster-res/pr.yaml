@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: cluster-res
+spec:
+  pipelineRef:
+    resolver: cluster
+    params:
+    - name: kind
+      value: pipeline
+    - name: name
+      value: pipeline-123
+    - name: namespace
+      value: default
