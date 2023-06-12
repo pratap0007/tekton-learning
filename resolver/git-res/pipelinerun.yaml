@@ -11,4 +11,4 @@ spec:
     - name: revision
       value: main
     - name: pathInRepo
-      value: resolver/git-res/pipeline-123.yaml
+      value: pipeline/0.1/pipeline-123.yaml
